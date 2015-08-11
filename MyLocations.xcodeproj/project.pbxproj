@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		CBD14C941B79834300D38050 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD14C931B79834300D38050 /* main.m */; };
 		CBD14C971B79834300D38050 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD14C961B79834300D38050 /* AppDelegate.m */; };
-		CBD14C9A1B79834300D38050 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD14C991B79834300D38050 /* FirstViewController.m */; };
+		CBD14C9A1B79834300D38050 /* CurrentLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD14C991B79834300D38050 /* CurrentLocationViewController.m */; };
 		CBD14C9D1B79834300D38050 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD14C9C1B79834300D38050 /* SecondViewController.m */; };
 		CBD14CA01B79834300D38050 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBD14C9E1B79834300D38050 /* Main.storyboard */; };
 		CBD14CA21B79834300D38050 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD14CA11B79834300D38050 /* Images.xcassets */; };
 		CBD14CA51B79834300D38050 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD14CA31B79834300D38050 /* LaunchScreen.xib */; };
 		CBD14CB11B79834300D38050 /* MyLocationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD14CB01B79834300D38050 /* MyLocationsTests.m */; };
+		CBD14CBB1B798B3A00D38050 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD14CBA1B798B3A00D38050 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,8 +34,8 @@
 		CBD14C931B79834300D38050 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CBD14C951B79834300D38050 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CBD14C961B79834300D38050 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CBD14C981B79834300D38050 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		CBD14C991B79834300D38050 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		CBD14C981B79834300D38050 /* CurrentLocationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentLocationViewController.h; sourceTree = "<group>"; };
+		CBD14C991B79834300D38050 /* CurrentLocationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentLocationViewController.m; sourceTree = "<group>"; };
 		CBD14C9B1B79834300D38050 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		CBD14C9C1B79834300D38050 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		CBD14C9F1B79834300D38050 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,6 +44,7 @@
 		CBD14CAA1B79834300D38050 /* MyLocationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyLocationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD14CAF1B79834300D38050 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBD14CB01B79834300D38050 /* MyLocationsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyLocationsTests.m; sourceTree = "<group>"; };
+		CBD14CBA1B798B3A00D38050 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBD14CBB1B798B3A00D38050 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +69,7 @@
 		CBD14C851B79834200D38050 = {
 			isa = PBXGroup;
 			children = (
+				CBD14CBA1B798B3A00D38050 /* CoreLocation.framework */,
 				CBD14C901B79834300D38050 /* MyLocations */,
 				CBD14CAD1B79834300D38050 /* MyLocationsTests */,
 				CBD14C8F1B79834300D38050 /* Products */,
@@ -86,8 +90,8 @@
 			children = (
 				CBD14C951B79834300D38050 /* AppDelegate.h */,
 				CBD14C961B79834300D38050 /* AppDelegate.m */,
-				CBD14C981B79834300D38050 /* FirstViewController.h */,
-				CBD14C991B79834300D38050 /* FirstViewController.m */,
+				CBD14C981B79834300D38050 /* CurrentLocationViewController.h */,
+				CBD14C991B79834300D38050 /* CurrentLocationViewController.m */,
 				CBD14C9B1B79834300D38050 /* SecondViewController.h */,
 				CBD14C9C1B79834300D38050 /* SecondViewController.m */,
 				CBD14C9E1B79834300D38050 /* Main.storyboard */,
@@ -226,7 +230,7 @@
 			files = (
 				CBD14C9D1B79834300D38050 /* SecondViewController.m in Sources */,
 				CBD14C971B79834300D38050 /* AppDelegate.m in Sources */,
-				CBD14C9A1B79834300D38050 /* FirstViewController.m in Sources */,
+				CBD14C9A1B79834300D38050 /* CurrentLocationViewController.m in Sources */,
 				CBD14C941B79834300D38050 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
