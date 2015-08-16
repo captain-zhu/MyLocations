@@ -18,6 +18,7 @@
 @property (nonatomic, weak) IBOutlet UIButton *tagButton;
 @property (nonatomic, weak) IBOutlet UIButton *getButton;
 
+
 - (IBAction)getLocaltion:(id)sender;
 
 @end
