@@ -7,8 +7,9 @@
 //
 
 #import "LocationDetailViewController.h"
+#import "CategoryTableViewController.h"
 
-@interface LocationDetailViewController ()
+@interface LocationDetailViewController () <UITextViewDelegate>
 
 
 @property (nonatomic, weak) IBOutlet UITextView *descriptionTextView;
@@ -22,11 +23,34 @@
 
 
 @implementation LocationDetailViewController
+{
+    NSString *_descriptionText;
+    NSString *_categoryName;
+}
 
 #pragma mark - Custom methods
 
+- (IBAction)categoryPickerDidPickCategory:(UIStoryboardSegue *)segue
+{
+    CategoryTableViewController * viewController = segue.sourceViewController;
+    
+    _categoryName = viewController.selectedCategoryName;
+    
+    self.categoryLabel.text = _categoryName;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ([super initWithCoder:aDecoder]) {
+        _descriptionText = @"";
+        _categoryName = @"No Category";
+    }
+    return self;
+}
+
 - (IBAction)done:(id)sender
 {
+    NSLog(@"Description '%@'", _descriptionText);
     [self closeScreen];
 }
 
@@ -66,8 +90,8 @@
 {
     [super viewDidLoad];
     
-    self.descriptionTextView.text = @"";
-    self.categoryLabel.text = @"";
+    self.descriptionTextView.text = _descriptionText;
+    self.categoryLabel.text = _categoryName;
     
     self.latitudeLabel.text = [NSString stringWithFormat:@"%0.8f", self.coordinate.latitude];
     self.longitudeLabel.text = [NSString stringWithFormat:@"%0.8f", self.coordinate.longitude];
@@ -102,6 +126,18 @@
     }
 }
 
+#pragma mark - UITextViewDelegate
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    _descriptionText = [textView.text stringByReplacingCharactersInRange:range withString:text];
+    return YES;
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    _descriptionText = textView.text;
+}
 
 
 
