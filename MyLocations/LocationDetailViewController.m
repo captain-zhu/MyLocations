@@ -103,6 +103,24 @@
     }
     
     self.dateLabel.text = [self formatDate:[NSDate date]];
+    
+    UITapGestureRecognizer *gestureRecongnizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard:)];
+    
+    gestureRecongnizer.cancelsTouchesInView = NO;
+    [self.tableView addGestureRecognizer:gestureRecongnizer];
+}
+
+- (void)hideKeyboard:(UITapGestureRecognizer *)gestureRecegnizer
+{
+    CGPoint point = [gestureRecegnizer locationInView:self.tableView];
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
+    
+    if (indexPath != nil && indexPath.section == 0 && indexPath.row == 0) {
+        return;
+    }
+    
+    [self.descriptionTextView resignFirstResponder];
 }
 
 #pragma mark - UITableViewDelegate
@@ -123,6 +141,21 @@
         return self.addressLabel.frame.size.height + 20.0;
     } else {
         return 44;
+    }
+}
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        return indexPath;
+    } else {
+        return nil;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        [self.descriptionTextView becomeFirstResponder];
     }
 }
 
