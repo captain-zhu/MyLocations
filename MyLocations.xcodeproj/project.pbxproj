@@ -19,6 +19,8 @@
 		CBD14CA51B79834300D38050 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD14CA31B79834300D38050 /* LaunchScreen.xib */; };
 		CBD14CB11B79834300D38050 /* MyLocationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD14CB01B79834300D38050 /* MyLocationsTests.m */; };
 		CBD14CBB1B798B3A00D38050 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD14CBA1B798B3A00D38050 /* CoreLocation.framework */; };
+		CBEB3FCA1B8409A400409D2E /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBEB3FC81B8409A400409D2E /* DataModel.xcdatamodeld */; };
+		CBEB3FCD1B84103100409D2E /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEB3FCC1B84103100409D2E /* Location.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,9 @@
 		CBD14CAF1B79834300D38050 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBD14CB01B79834300D38050 /* MyLocationsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyLocationsTests.m; sourceTree = "<group>"; };
 		CBD14CBA1B798B3A00D38050 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CBEB3FC91B8409A400409D2E /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		CBEB3FCB1B84103100409D2E /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		CBEB3FCC1B84103100409D2E /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +119,9 @@
 				CBD14C911B79834300D38050 /* Supporting Files */,
 				CBBAA4D61B82CF3F003065EC /* HudView.h */,
 				CBBAA4D71B82CF3F003065EC /* HudView.m */,
+				CBEB3FC81B8409A400409D2E /* DataModel.xcdatamodeld */,
+				CBEB3FCB1B84103100409D2E /* Location.h */,
+				CBEB3FCC1B84103100409D2E /* Location.m */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
@@ -246,8 +254,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB4AD7851B81671700910FAD /* LocationDetailViewController.m in Sources */,
+				CBEB3FCA1B8409A400409D2E /* DataModel.xcdatamodeld in Sources */,
 				CBBAA4D81B82CF3F003065EC /* HudView.m in Sources */,
 				CBBAA4D51B82B0B1003065EC /* CategoryTableViewController.m in Sources */,
+				CBEB3FCD1B84103100409D2E /* Location.m in Sources */,
 				CBD14C9D1B79834300D38050 /* SecondViewController.m in Sources */,
 				CBD14C971B79834300D38050 /* AppDelegate.m in Sources */,
 				CBD14C9A1B79834300D38050 /* CurrentLocationViewController.m in Sources */,
@@ -460,6 +470,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CBEB3FC81B8409A400409D2E /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CBEB3FC91B8409A400409D2E /* DataModel.xcdatamodel */,
+			);
+			currentVersion = CBEB3FC91B8409A400409D2E /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CBD14C861B79834200D38050 /* Project object */;
 }

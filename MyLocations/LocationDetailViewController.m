@@ -9,6 +9,7 @@
 #import "LocationDetailViewController.h"
 #import "CategoryTableViewController.h"
 #import "HudView.h"
+#import "Location.h"
 
 @interface LocationDetailViewController () <UITextViewDelegate>
 
@@ -27,6 +28,7 @@
 {
     NSString *_descriptionText;
     NSString *_categoryName;
+    NSDate *_date;
 }
 
 #pragma mark - Custom methods
@@ -45,6 +47,7 @@
     if ([super initWithCoder:aDecoder]) {
         _descriptionText = @"";
         _categoryName = @"No Category";
+        _date = [NSDate date];
     }
     return self;
 }
@@ -106,7 +109,7 @@
         self.addressLabel.text = @"No Address Found";
     }
     
-    self.dateLabel.text = [self formatDate:[NSDate date]];
+    self.dateLabel.text = [self formatDate:_date];
     
     UITapGestureRecognizer *gestureRecongnizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard:)];
     
