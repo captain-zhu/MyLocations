@@ -58,6 +58,21 @@
     HudView *hudView = [HudView hudInView:self.navigationController.view animated:YES];
     hudView.text = @"Tagged";
     
+    Location *location = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.manageObjectContext];
+    
+    location.locationDescription = _descriptionText;
+    location.category = _categoryName;
+    location.latitude = @(self.coordinate.latitude);
+    location.longitude = @(self.coordinate.longitude);
+    location.date = _date;
+    location.placemark = _placemark;
+    
+    NSError *error;
+    if (![self.manageObjectContext save:&error]) {
+        NSLog(@"Error: error");
+        abort();
+    }
+    
     [self performSelector:@selector(closeScreen) withObject:nil afterDelay:0.6];
 }
 
