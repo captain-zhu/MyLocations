@@ -69,8 +69,8 @@
     
     NSError *error;
     if (![self.manageObjectContext save:&error]) {
-        NSLog(@"Error: error");
-        abort();
+        FATAL_CORE_DATA_ERROR(error);
+        return;
     }
     
     [self performSelector:@selector(closeScreen) withObject:nil afterDelay:0.6];
